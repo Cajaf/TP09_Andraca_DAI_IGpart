@@ -1,0 +1,25 @@
+.login-container {
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.login-container input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #45a049;
+}
