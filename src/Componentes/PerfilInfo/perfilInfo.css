@@ -1,0 +1,60 @@
+.perfil-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.perfil-header {
+  gap: 40px; /* separación entre la foto y el texto */
+}
+
+.perfil-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.perfil-actions {
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.perfil-actions button {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.perfil-actions button:hover {
+  background-color: #f2f2f2;
+}
+
+.perfil-stats {
+  gap: 40px;
+}
+
+.perfil-stats div {
+  text-align: center;
+}
+
+.perfil-stats div p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.perfil-desc {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.stats{
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,20 @@
+.like-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.like-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.like-icon:hover {
+  transform: scale(1.2);
+}
+
+.like-icon.liked {
+  filter: drop-shadow(0 0 5px red);
+}

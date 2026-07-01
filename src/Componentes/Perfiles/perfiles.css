@@ -1,0 +1,19 @@
+.perfil-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.perfiles-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+}
+
+.perfil-container img {
+  width: 80px;   /* ancho de la foto */
+  height: 80px;  /* alto de la foto */
+  border-radius: 50%; /* hace la foto circular */
+  object-fit: cover;  /* recorta la imagen para que encaje */
+}

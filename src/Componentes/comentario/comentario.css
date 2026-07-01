@@ -1,0 +1,13 @@
+.comentario-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;   
+  margin: 8px 0;
+}
+
+.comentario-nombre {
+  font-weight: bold;
+  color: black;
+}
+
+/* me ayude con la ia para crear este css cambie lo que nesesitaba

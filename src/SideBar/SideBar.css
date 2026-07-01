@@ -1,0 +1,58 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;   /* ítems en columna */
+  align-items: flex-start;  /* alineados a la izquierda */
+  width: 220px;             /* ancho fijo del sidebar */
+  padding: 20px;
+  height: 100vh;            /* ocupa toda la altura */
+  background-color: #fff;   /* fondo blanco */
+}
+
+.sidebar-logo {
+  width: 200px;
+  height: auto;        /* mantiene proporción */
+  margin-bottom: 30px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;      /* ícono y texto alineados */
+  gap: 12px;                /* espacio entre ícono y texto */
+  margin: 10px 0;
+  cursor: pointer;          /* cursor tipo mano */
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #f2f2f2; /* efecto hover */
+}
+
+.sidebar-item img {
+  width: 24px;              /* tamaño de íconos */
+  height: 24px;
+}
+
+.sidebar h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.sidebar-profile img {
+  width: 35px;   /* ancho de la foto */
+  height: 35px;  /* alto de la foto */
+  border-radius: 50%; /* hace la foto circular */
+  object-fit: cover;  /* recorta la imagen para que encaje */
+}
+
+
+/*me ayude de de la ia para este css
