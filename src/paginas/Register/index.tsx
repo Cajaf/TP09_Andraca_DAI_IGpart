@@ -11,7 +11,7 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   try {
-    const response = await fetch("http://localhost:5432/api/register", {
+    const response = await fetch("http://localhost:3000/api/login/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

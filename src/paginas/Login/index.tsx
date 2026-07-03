@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Login: React.FC = () => {
@@ -11,7 +11,7 @@ const Login: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   try {
-    const response = await fetch("http://localhost:5432/api/login", {
+    const response = await fetch("http://localhost:3000/api/login/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ identifier, password }),
@@ -49,6 +49,12 @@ const Login: React.FC = () => {
         />
         <button type="submit">Ingresar</button>
       </form>
+       <div className="register-link">
+        <p>¿No tienes cuenta?</p>
+        <Link to="/register">
+          <button type="button">Registrarse</button>
+        </Link>
+      </div>
     </div>
   );
 };
