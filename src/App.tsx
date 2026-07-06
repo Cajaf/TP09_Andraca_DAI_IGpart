@@ -5,6 +5,7 @@ import Perfiles from './Componentes/Perfiles';
 import { useEffect, useState } from 'react';
 import type { typePerfil, typePublicacion } from './types';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [usuarioSesion, setUsuarioSesion] = useState<typePerfil | null>(null);
@@ -20,7 +21,13 @@ function App() {
         const usuariosRes = await axios.get("http://localhost:3000/api/usuarios", {
           headers: { Authorization: `Bearer ${token}` }
         });
-        setPerfiles(usuariosRes.data);
+        const perfilesAdaptados = usuariosRes.data.map((u: any) => ({
+          id: u.id,
+          nombre: u.nombrecompleto,
+          urlimagen: u.urlimagen ?? ""
+        }));
+
+        setPerfiles(perfilesAdaptados);
 
         // Setear usuario de sesión (ejemplo: el primero)
         if (usuariosRes.data.length > 0) {
@@ -28,7 +35,7 @@ function App() {
         }
 
         // Traer publicaciones
-        const publicacionesRes = await axios.get("http://localhost:3000/api/publicaciones", {
+        const publicacionesRes = await axios.get("http://localhost:3000/api/publicacion", {
           headers: { Authorization: `Bearer ${token}` }
         });
         setPublicaciones(publicacionesRes.data);
@@ -45,18 +52,27 @@ function App() {
     <section className="app-container">
       <div className="sidebar">
         {usuarioSesion && <SideBar usuarioSesion={usuarioSesion}/>}
+        <Link to="/crearPubli">
+            <button className="btn-link">crearPubli</button>
+        </Link>
       </div>
+        
       <section className="main-content">
         <Perfiles perfiles={perfiles.slice(1, 7)} />
-        {publicaciones.map(item => (
+      {publicaciones.map((item, index) => {
+        const perfilEncontrado = perfiles.find(p => p.id === item.usuarioid);
+
+        return (
           <Publicacion
-            perfil={perfiles.find(p => p.id === item.usuarioid)}
+            key={index}
+            perfil={perfilEncontrado ?? { id: 0, nombre: "Desconocido", urlimagen: "" }}
             urlimagen={item.urlimagen}
             likes={item.likes}
             comentarios={[]}
-            usuarioid={0}
+            usuarioid={item.usuarioid}
           />
-        ))}
+        );
+      })}
       </section>
     </section>
   )
