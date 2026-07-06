@@ -1,5 +1,5 @@
 export interface typePublicacion {
-perfil: typePerfil
+perfil?: typePerfil
 urlimagen:string
 likes:number
 comentarios: typeComentario[]
@@ -7,9 +7,11 @@ usuarioid:number
 }
 
 export interface typePerfil {
-id:number
-urlimagen:string
-nombre: string
+  id: number
+  nombrecompleto: string   // coincide con la columna
+  email: string
+  nombreusuario: string
+  // si querés mostrar foto, tendrías que agregar urlimagen en la tabla usuarios
 }
 
 export interface typeComentario {

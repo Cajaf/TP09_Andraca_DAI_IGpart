@@ -30,8 +30,8 @@ function App() {
         setPerfiles(perfilesAdaptados);
 
         // Setear usuario de sesión (ejemplo: el primero)
-        if (usuariosRes.data.length > 0) {
-          setUsuarioSesion(usuariosRes.data[0]);
+        if (perfilesAdaptados.length > 0) {
+        setUsuarioSesion(perfilesAdaptados[0]);
         }
 
         // Traer publicaciones
@@ -65,7 +65,7 @@ function App() {
         return (
           <Publicacion
             key={index}
-            perfil={perfilEncontrado ?? { id: 0, nombre: "Desconocido", urlimagen: "" }}
+            perfil={perfilEncontrado ?? { id: 0, nombrecompleto: "Desconocido", nombreusuario:"", email:"" }}
             urlimagen={item.urlimagen}
             likes={item.likes}
             comentarios={[]}
