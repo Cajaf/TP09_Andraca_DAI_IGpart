@@ -65,7 +65,7 @@ function App() {
         return (
           <Publicacion
             key={index}
-            perfil={perfilEncontrado ?? { id: 0, nombrecompleto: "Desconocido", nombreusuario:"", email:"" }}
+            perfil={perfilEncontrado ?? { id: 0, nombrecompleto: "Desconocido", nombreusuario:"",email:"g" }}
             urlimagen={item.urlimagen}
             likes={item.likes}
             comentarios={[]}
