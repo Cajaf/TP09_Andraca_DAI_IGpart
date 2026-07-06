@@ -10,19 +10,19 @@ import BotonLike from "../BotonLike"
 import favorito from "../../fotos/favorito.png"
 import puntitos from "../../fotos/puntitos.png"
 
-const Publicacion: React.FC<typePublicacion> = ({perfil,foto, likes, comentarios}) =>{
+const Publicacion: React.FC<typePublicacion> = ({perfil,urlimagen, likes, comentarios}) =>{
     const [likesState, setLikeState] = useState(likes)
     return(
         <>
        <div className="publicacion">
             <div className="publicacion-head">
                 <div className="profile">
-                <FotoPerfil foto={perfil.foto} nombre={perfil.nombre} />
+                <FotoPerfil urlimagen={perfil.urlimagen} nombre={perfil.nombre}  id={0}/>
                 </div>
                 <h4>{perfil.nombre}</h4>
                 <img src={puntitos} className="puntitos"/>
             </div>
-            <img src={foto} className="publicacion-img" />
+            <img src={urlimagen} className="publicacion-img" />
             <div className="botones">
                 <BotonLike setLikeState={setLikeState} likes={likesState}/>
                 <img src={mensajes}/>

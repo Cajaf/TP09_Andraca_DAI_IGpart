@@ -2,9 +2,9 @@ import type { typePerfil } from "../../types"
 import './fotoPerfil.css'
 import perfilDefault from "../../fotos/perfilDefault.png" 
 
-const FotoPerfil:React.FC<typePerfil> = ({nombre,foto}) =>{
-   let fotoPerfil = foto
-   if(foto == ""){
+const FotoPerfil:React.FC<typePerfil> = ({urlimagen}) =>{
+   let fotoPerfil = urlimagen
+   if(urlimagen == ""){
       fotoPerfil = perfilDefault;
       
    }

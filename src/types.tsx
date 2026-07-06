@@ -1,12 +1,14 @@
 export interface typePublicacion {
 perfil: typePerfil
-foto:string
+urlimagen:string
 likes:number
 comentarios: typeComentario[]
+usuarioid:number
 }
 
 export interface typePerfil {
-foto:string
+id:number
+urlimagen:string
 nombre: string
 }
 
