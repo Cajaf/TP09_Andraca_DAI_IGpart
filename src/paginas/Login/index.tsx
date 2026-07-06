@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
     const navigate = useNavigate();
-  const [identifier, setIdentifier] = useState("");
+  const [email, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -14,7 +14,7 @@ const Login: React.FC = () => {
     const response = await fetch("http://localhost:3000/api/login/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ identifier, password }),
+      body: JSON.stringify({ email, password }),
     });
 
     if (!response.ok) {
@@ -37,8 +37,8 @@ const Login: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Email o Nombre de Usuario"
-          value={identifier}
+          placeholder="Email"
+          value={email}
           onChange={(e) => setIdentifier(e.target.value)}
         />
         <input
